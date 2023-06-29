@@ -1,0 +1,13 @@
+int sum(int a, int b) {
+    // int c = a + b;
+    return a + b;
+}
+
+int a = 5;
+{
+  int b;
+}
+{
+  int b;
+}
+println(sum(a, 100));

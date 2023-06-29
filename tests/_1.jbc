@@ -1,0 +1,217 @@
+version 6;
+public class _1 extends java.lang.Object
+{
+  public static int _gv0;
+  public static int _gv1;
+  public static int _gv2;
+  public static int _gv3;
+  public static int _gv4;
+  public static double _gv5;
+  public static double _gv6;
+  public static int _gv7;
+  public static int _gv8;
+  public static java.lang.String _gv9;
+  public static boolean _gv10;
+  public static int _gv11;
+  public static int input_int(java.lang.String name)
+  {
+    aload 0
+    ldc ""
+    invokevirtual java.lang.String#int compareTo(java.lang.String)
+    ifne L_0
+    iconst_0
+    goto L_1
+  L_0:
+    iconst_1
+  L_1:
+    ifeq L_2
+    ldc "Введите "
+    aload 0
+    invokestatic CompilerDemo.Runtime#java.lang.String concat(java.lang.String, java.lang.String)
+    ldc ": "
+    invokestatic CompilerDemo.Runtime#java.lang.String concat(java.lang.String, java.lang.String)
+    invokestatic CompilerDemo.Runtime#void print(java.lang.String)
+    goto L_3
+  L_2:
+  L_3:
+    invokestatic CompilerDemo.Runtime#java.lang.String read()
+    invokestatic CompilerDemo.Runtime#int to_int(java.lang.String)
+    ireturn
+  }
+  public static double input_float(java.lang.String name)
+  {
+    aload 0
+    astore 1
+    aload 0
+    ldc ""
+    invokevirtual java.lang.String#int compareTo(java.lang.String)
+    ifne L_4
+    iconst_0
+    goto L_5
+  L_4:
+    iconst_1
+  L_5:
+    ifeq L_6
+    aload 1
+    astore 2
+    ldc "Введите "
+    aload 2
+    invokestatic CompilerDemo.Runtime#java.lang.String concat(java.lang.String, java.lang.String)
+    ldc ": "
+    invokestatic CompilerDemo.Runtime#java.lang.String concat(java.lang.String, java.lang.String)
+    invokestatic CompilerDemo.Runtime#void print(java.lang.String)
+    goto L_7
+  L_6:
+  L_7:
+    invokestatic CompilerDemo.Runtime#java.lang.String read()
+    invokestatic CompilerDemo.Runtime#double to_float(java.lang.String)
+    dreturn
+  }
+  
+  public static void main(java.lang.String[])
+  {
+    getstatic _1#int _gv0
+    putstatic _1#int _gv1
+    ldc 90
+    putstatic _1#int _gv2
+  L_8:
+    getstatic _1#int _gv0
+    ldc 3
+    if_icmpgt L_9
+    iconst_0
+    goto L_10
+  L_9:
+    iconst_1
+  L_10:
+    ifeq L_11
+    getstatic _1#int _gv0
+    ldc 1
+    iadd
+    putstatic _1#int _gv3
+    getstatic _1#int _gv3
+    invokestatic CompilerDemo.Runtime#java.lang.String convert(int)
+    invokestatic CompilerDemo.Runtime#void print(java.lang.String)
+    goto L_8
+  L_11:
+    ldc "a"
+    invokestatic _1#int input_int(java.lang.String)
+    putstatic _1#int _gv4
+    ldc "b"
+    invokestatic _1#double input_float(java.lang.String)
+    putstatic _1#double _gv5
+    ldc "c"
+    invokestatic _1#double input_float(java.lang.String)
+    putstatic _1#double _gv6
+    ldc 0
+    putstatic _1#int _gv7
+    ldc 8
+    putstatic _1#int _gv8
+  L_12:
+    getstatic _1#int _gv7
+    ldc 5
+    if_icmple L_13
+    iconst_0
+    goto L_14
+  L_13:
+    iconst_1
+  L_14:
+    getstatic _1#int _gv0
+    ifeq L_15
+    iconst_1
+    goto L_16
+  L_15:
+    iconst_0
+  L_16:
+    iand
+    ifeq L_29
+  L_17:
+    getstatic _1#int _gv4
+    i2d
+    getstatic _1#double _gv5
+    dcmpg
+    iflt L_18
+    iconst_0
+    goto L_19
+  L_18:
+    iconst_1
+  L_19:
+    ifeq L_28
+    getstatic _1#int _gv4
+    i2d
+    ldc 7
+    i2d
+    getstatic _1#double _gv5
+    dadd
+    dcmpg
+    ifgt L_20
+    iconst_0
+    goto L_21
+  L_20:
+    iconst_1
+  L_21:
+    ifeq L_22
+    getstatic _1#int _gv4
+    i2d
+    getstatic _1#double _gv5
+    ldc 2
+    ldc 1
+    isub
+    i2d
+    dmul
+    dadd
+    ldc 0
+    i2d
+    dadd
+    putstatic _1#double _gv6
+    ldc "98	ура"
+    putstatic _1#java.lang.String _gv9
+    goto L_27
+  L_22:
+    getstatic _1#int _gv4
+    ifeq L_23
+    iconst_1
+    goto L_24
+  L_23:
+    iconst_0
+  L_24:
+    ifeq L_25
+    getstatic _1#double _gv6
+    ldc 1
+    i2d
+    dadd
+    invokestatic CompilerDemo.Runtime#java.lang.String convert(double)
+    ldc " "
+    invokestatic CompilerDemo.Runtime#java.lang.String concat(java.lang.String, java.lang.String)
+    ldc2_w 89.89000000000000056843D
+    invokestatic CompilerDemo.Runtime#java.lang.String convert(double)
+    invokestatic CompilerDemo.Runtime#java.lang.String concat(java.lang.String, java.lang.String)
+    invokestatic CompilerDemo.Runtime#void print(java.lang.String)
+    goto L_26
+  L_25:
+  L_26:
+  L_27:
+    goto L_17
+  L_28:
+    getstatic _1#int _gv7
+    ldc 1
+    iadd
+    putstatic _1#int _gv7
+    ldc 5
+    invokestatic CompilerDemo.Runtime#java.lang.String convert(int)
+    invokestatic CompilerDemo.Runtime#void print(java.lang.String)
+    goto L_12
+  L_29:
+    ldc "А сейчас бесконечный цикл :)"
+    invokestatic CompilerDemo.Runtime#void println(java.lang.String)
+    iconst_1
+    putstatic _1#boolean _gv10
+  L_30:
+    iconst_1
+    ifeq L_31
+    goto L_30
+  L_31:
+    ldc 0
+    putstatic _1#int _gv11
+    return
+  }
+}

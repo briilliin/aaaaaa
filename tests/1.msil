@@ -1,0 +1,185 @@
+.assembly program
+{
+}
+.class public Program
+{
+  .field public static int32 _gv0
+  .field public static int32 _gv1
+  .field public static int32 _gv2
+  .field public static int32 _gv3
+  .field public static int32 _gv4
+  .field public static float64 _gv5
+  .field public static float64 _gv6
+  .field public static int32 _gv7
+  .field public static int32 _gv8
+  .field public static string _gv9
+  .field public static bool _gv10
+  .field public static int32 _gv11
+  .method public static int32 input_int(string name) cil managed
+  {
+    ldarg 0
+    ldstr ""
+    call bool [mscorlib]System.String::op_Inequality(string, string)
+    brfalse L_0
+    ldstr "Введите "
+    ldarg 0
+    call string class CompilerDemo.Runtime::concat(string, string)
+    ldstr ": "
+    call string class CompilerDemo.Runtime::concat(string, string)
+    call void class CompilerDemo.Runtime::print(string)
+    br L_1
+  L_0:
+  L_1:
+    call string class CompilerDemo.Runtime::read()
+    call int32 class CompilerDemo.Runtime::to_int(string)
+    ret
+  }
+  .method public static float64 input_float(string name) cil managed
+  {
+    .locals init (string _v0, string _v1)
+    ldarg 0
+    stloc 0
+    ldarg 0
+    ldstr ""
+    call bool [mscorlib]System.String::op_Inequality(string, string)
+    brfalse L_2
+    ldloc 0
+    stloc 1
+    ldstr "Введите "
+    ldloc 1
+    call string class CompilerDemo.Runtime::concat(string, string)
+    ldstr ": "
+    call string class CompilerDemo.Runtime::concat(string, string)
+    call void class CompilerDemo.Runtime::print(string)
+    br L_3
+  L_2:
+  L_3:
+    call string class CompilerDemo.Runtime::read()
+    call float64 class CompilerDemo.Runtime::to_float(string)
+    ret
+  }
+  
+  .method public static void Main()
+  {
+    .entrypoint
+    ldsfld int32 Program::_gv0
+    stsfld int32 Program::_gv1
+    ldc.i4 90
+    stsfld int32 Program::_gv2
+  L_4:
+    ldsfld int32 Program::_gv0
+    ldc.i4 3
+    cgt
+    brfalse L_5
+    ldsfld int32 Program::_gv0
+    ldc.i4 1
+    add
+    stsfld int32 Program::_gv3
+    ldsfld int32 Program::_gv3
+    call string class CompilerDemo.Runtime::convert(int32)
+    call void class CompilerDemo.Runtime::print(string)
+    br L_4
+  L_5:
+    ldstr "a"
+    call int32 class Program::input_int(string)
+    stsfld int32 Program::_gv4
+    ldstr "b"
+    call float64 class Program::input_float(string)
+    stsfld float64 Program::_gv5
+    ldstr "c"
+    call float64 class Program::input_float(string)
+    stsfld float64 Program::_gv6
+    ldc.i4 0
+    stsfld int32 Program::_gv7
+    ldc.i4 8
+    stsfld int32 Program::_gv8
+  L_6:
+    ldsfld int32 Program::_gv7
+    ldc.i4 5
+    cgt
+    ldc.i4.0
+    ceq
+    ldsfld int32 Program::_gv0
+    ldc.i4.0
+    ceq
+    ldc.i4.0
+    ceq
+    and
+    brfalse L_13
+  L_7:
+    ldsfld int32 Program::_gv4
+    conv.r8
+    ldsfld float64 Program::_gv5
+    clt
+    brfalse L_12
+    ldsfld int32 Program::_gv4
+    conv.r8
+    ldc.i4 7
+    conv.r8
+    ldsfld float64 Program::_gv5
+    add
+    cgt
+    brfalse L_8
+    ldsfld int32 Program::_gv4
+    conv.r8
+    ldsfld float64 Program::_gv5
+    ldc.i4 2
+    ldc.i4 1
+    sub
+    conv.r8
+    mul
+    add
+    ldc.i4 0
+    conv.r8
+    add
+    stsfld float64 Program::_gv6
+    ldstr "98	ура"
+    stsfld string Program::_gv9
+    br L_11
+  L_8:
+    ldsfld int32 Program::_gv4
+    ldc.i4.0
+    ceq
+    ldc.i4.0
+    ceq
+    brfalse L_9
+    ldsfld float64 Program::_gv6
+    ldc.i4 1
+    conv.r8
+    add
+    call string class CompilerDemo.Runtime::convert(float64)
+    ldstr " "
+    call string class CompilerDemo.Runtime::concat(string, string)
+    ldc.r8 89.89
+    call string class CompilerDemo.Runtime::convert(float64)
+    call string class CompilerDemo.Runtime::concat(string, string)
+    call void class CompilerDemo.Runtime::print(string)
+    br L_10
+  L_9:
+  L_10:
+  L_11:
+    br L_7
+  L_12:
+    ldsfld int32 Program::_gv7
+    ldc.i4 1
+    add
+    stsfld int32 Program::_gv7
+    ldc.i4 5
+    call string class CompilerDemo.Runtime::convert(int32)
+    call void class CompilerDemo.Runtime::print(string)
+    br L_6
+  L_13:
+    ldstr "А сейчас бесконечный цикл :)"
+    call void class CompilerDemo.Runtime::println(string)
+    ldc.i4 1
+    stsfld bool Program::_gv10
+  L_14:
+    ldc.i4 1
+    brfalse L_15
+    br L_14
+  L_15:
+    ldc.i4 0
+    stsfld int32 Program::_gv11
+    ret
+  }
+}

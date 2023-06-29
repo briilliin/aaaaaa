@@ -1,0 +1,215 @@
+.assembly program
+{
+}
+.class public Program
+{
+  .field public static int32 _gv0
+  .field public static int32 _gv1
+  .field public static int32 _gv2
+  .field public static int32 _gv3
+  .field public static int32 _gv4
+  .field public static int32 _gv5
+  .field public static float64 _gv6
+  .method public static int32 input_int(string name, int32 c) cil managed
+  {
+    .locals init (int32 _v0, string _v1)
+    ldc.i4 8
+    stloc 0
+    ldarg 0
+    ldstr ""
+    call bool [mscorlib]System.String::op_Inequality(string, string)
+    brfalse L_0
+    ldstr "Введите "
+    ldarg 0
+    call string class CompilerDemo.Runtime::concat(string, string)
+    ldstr ": "
+    call string class CompilerDemo.Runtime::concat(string, string)
+    call void class CompilerDemo.Runtime::print(string)
+    br L_1
+  L_0:
+    ldstr "Введите число: "
+    stloc 1
+    ldloc 1
+    call void class CompilerDemo.Runtime::print(string)
+  L_1:
+    call string class CompilerDemo.Runtime::read()
+    call int32 class CompilerDemo.Runtime::to_int(string)
+    ret
+  }
+  .method public static int32 factorial(int32 a) cil managed
+  {
+    ldarg 0
+    ldc.i4 1
+    cgt
+    ldc.i4.0
+    ceq
+    brfalse L_2
+    ldc.i4 1
+    ret
+    br L_3
+  L_2:
+    ldarg 0
+    ldarg 0
+    ldc.i4 1
+    sub
+    call int32 class Program::factorial(int32)
+    mul
+    ret
+  L_3:
+    ldc.i4 0
+    ret
+  }
+  .method public static float64 sqrt(float64 v) cil managed
+  {
+    ldarg 0
+    ldc.i4 1
+    conv.r8
+    cgt
+    brfalse L_4
+    br L_5
+  L_4:
+  L_5:
+    ldc.r8 0.0
+    ret
+  }
+  
+  .method public static void Main()
+  {
+    .entrypoint
+    ldc.i4 0
+    stsfld int32 Program::_gv0
+    ldc.i4 1
+    stsfld int32 Program::_gv1
+    ldstr "a"
+    ldc.i4 2
+    call int32 class Program::input_int(string, int32)
+    stsfld int32 Program::_gv2
+    ldstr ""
+    ldc.i4 2
+    call int32 class Program::input_int(string, int32)
+    stsfld int32 Program::_gv3
+    ldsfld int32 Program::_gv2
+    ldsfld int32 Program::_gv3
+    add
+    stsfld int32 Program::_gv4
+    ldstr "c = a + b = "
+    ldsfld int32 Program::_gv4
+    call string class CompilerDemo.Runtime::convert(int32)
+    call string class CompilerDemo.Runtime::concat(string, string)
+    call void class CompilerDemo.Runtime::println(string)
+    ldsfld int32 Program::_gv4
+    call string class CompilerDemo.Runtime::convert(int32)
+    call void class CompilerDemo.Runtime::println(string)
+    ldc.i4 0
+    stsfld int32 Program::_gv5
+  L_6:
+    ldsfld int32 Program::_gv5
+    ldc.i4 30
+    clt
+    brfalse L_9
+    ldsfld int32 Program::_gv5
+    conv.r8
+    stsfld float64 Program::_gv6
+    ldsfld int32 Program::_gv5
+    ldc.i4 2
+    rem
+    ldc.i4 0
+    ceq
+    ldsfld int32 Program::_gv5
+    ldc.i4 3
+    rem
+    ldc.i4 0
+    ceq
+    and
+    ldsfld float64 Program::_gv6
+    ldc.i4 10
+    conv.r8
+    clt
+    ldsfld float64 Program::_gv6
+    ldc.i4 20
+    conv.r8
+    cgt
+    or
+    and
+    brfalse L_7
+    ldsfld int32 Program::_gv5
+    call string class CompilerDemo.Runtime::convert(int32)
+    call void class CompilerDemo.Runtime::println(string)
+    br L_8
+  L_7:
+  L_8:
+    ldsfld int32 Program::_gv5
+    ldc.i4 1
+    add
+    stsfld int32 Program::_gv5
+    br L_6
+  L_9:
+    ldstr "a"
+    ldstr "b"
+    call int32 class CompilerDemo.Runtime::compare(string, string)
+    ldc.i4.0
+    cgt
+    call string class CompilerDemo.Runtime::convert(bool)
+    call void class CompilerDemo.Runtime::println(string)
+    ldstr "a"
+    ldstr "b"
+    call int32 class CompilerDemo.Runtime::compare(string, string)
+    ldc.i4 -1
+    cgt
+    call string class CompilerDemo.Runtime::convert(bool)
+    call void class CompilerDemo.Runtime::println(string)
+    ldstr "a"
+    ldstr "a"
+    call int32 class CompilerDemo.Runtime::compare(string, string)
+    ldc.i4 -1
+    cgt
+    call string class CompilerDemo.Runtime::convert(bool)
+    call void class CompilerDemo.Runtime::println(string)
+    ldstr "a"
+    ldstr "b"
+    call int32 class CompilerDemo.Runtime::compare(string, string)
+    ldc.i4.0
+    clt
+    call string class CompilerDemo.Runtime::convert(bool)
+    call void class CompilerDemo.Runtime::println(string)
+    ldstr "a"
+    ldstr "b"
+    call int32 class CompilerDemo.Runtime::compare(string, string)
+    ldc.i4.1
+    clt
+    call string class CompilerDemo.Runtime::convert(bool)
+    call void class CompilerDemo.Runtime::println(string)
+    ldstr "a"
+    ldstr "a"
+    call int32 class CompilerDemo.Runtime::compare(string, string)
+    ldc.i4.1
+    clt
+    call string class CompilerDemo.Runtime::convert(bool)
+    call void class CompilerDemo.Runtime::println(string)
+    ldstr "a"
+    ldstr "a"
+    call bool [mscorlib]System.String::op_Equality(string, string)
+    call string class CompilerDemo.Runtime::convert(bool)
+    call void class CompilerDemo.Runtime::println(string)
+    ldstr "a"
+    ldstr "a"
+    call bool [mscorlib]System.String::op_Inequality(string, string)
+    call string class CompilerDemo.Runtime::convert(bool)
+    call void class CompilerDemo.Runtime::println(string)
+    ldstr "a"
+    ldstr "b"
+    call bool [mscorlib]System.String::op_Equality(string, string)
+    call string class CompilerDemo.Runtime::convert(bool)
+    call void class CompilerDemo.Runtime::println(string)
+    ldstr "a"
+    ldstr "b"
+    call bool [mscorlib]System.String::op_Inequality(string, string)
+    call string class CompilerDemo.Runtime::convert(bool)
+    call void class CompilerDemo.Runtime::println(string)
+    ldc.i4 5
+    call int32 class Program::factorial(int32)
+    call string class CompilerDemo.Runtime::convert(int32)
+    call void class CompilerDemo.Runtime::println(string)
+    ret
+  }
+}

@@ -1,0 +1,26 @@
+version 6;
+public class _4 extends java.lang.Object
+{
+  public static int _gv0;
+  public static int _gv1;
+  public static int _gv2;
+  public static int sum(int a, int b)
+  {
+    iload 0
+    iload 1
+    iadd
+    ireturn
+  }
+  
+  public static void main(java.lang.String[])
+  {
+    ldc 5
+    putstatic _4#int _gv0
+    getstatic _4#int _gv0
+    ldc 100
+    invokestatic _4#int sum(int, int)
+    invokestatic CompilerDemo.Runtime#java.lang.String convert(int)
+    invokestatic CompilerDemo.Runtime#void println(java.lang.String)
+    return
+  }
+}

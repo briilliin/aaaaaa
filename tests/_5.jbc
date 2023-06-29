@@ -1,0 +1,110 @@
+version 6;
+public class _5 extends java.lang.Object
+{
+  public static double _gv0;
+  public static double sqrt(double x)
+  {
+    dload 0
+    ldc 0
+    i2d
+    dcmpg
+    iflt L_0
+    iconst_0
+    goto L_1
+  L_0:
+    iconst_1
+  L_1:
+    ifeq L_2
+    ldc -1
+    i2d
+    dreturn
+    goto L_3
+  L_2:
+  L_3:
+    ldc 1
+    i2d
+    dstore 2
+    dload 0
+    dstore 4
+    dload 0
+    ldc 1
+    i2d
+    dcmpg
+    iflt L_4
+    iconst_0
+    goto L_5
+  L_4:
+    iconst_1
+  L_5:
+    ifeq L_6
+    ldc 0
+    i2d
+    dstore 2
+    ldc 1
+    i2d
+    dstore 4
+    goto L_7
+  L_6:
+  L_7:
+  L_8:
+    dload 4
+    dload 2
+    dsub
+    getstatic _5#double _gv0
+    dcmpg
+    ifgt L_9
+    iconst_0
+    goto L_10
+  L_9:
+    iconst_1
+  L_10:
+    ifeq L_15
+    dload 2
+    dload 4
+    dadd
+    ldc 2
+    i2d
+    ddiv
+    dstore 6
+    dload 6
+    dload 6
+    dmul
+    dload 0
+    dcmpg
+    ifgt L_11
+    iconst_0
+    goto L_12
+  L_11:
+    iconst_1
+  L_12:
+    ifeq L_13
+    dload 6
+    dstore 4
+    goto L_14
+  L_13:
+    dload 6
+    dstore 2
+  L_14:
+    goto L_8
+  L_15:
+    dload 2
+    dload 4
+    dadd
+    ldc 2
+    i2d
+    ddiv
+    dreturn
+  }
+  
+  public static void main(java.lang.String[])
+  {
+    ldc2_w 0.00000000100000000000D
+    putstatic _5#double _gv0
+    ldc 2
+    i2d
+    invokestatic _5#double sqrt(double)
+    invokestatic CompilerDemo.Runtime#java.lang.String convert(double)
+    invokestatic CompilerDemo.Runtime#void println(java.lang.String)
+    return
+  }
+}
